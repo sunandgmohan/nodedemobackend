@@ -20,7 +20,7 @@ pipeline {
             steps {
                 sshagent(['EC2_CRED']) {
                     sh """
-                    ssh -o StrictHostKeyChecking=no ${EC2_IP} 'EOF'
+                    ssh -o StrictHostKeyChecking=no ${EC2_IP} << 'EOF'
                     set -e
                     mkdir -p /home/ubuntu/backend
                     cd /home/ubuntu/backend
