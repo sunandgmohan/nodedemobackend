@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    environments {
+    environment {
         CONTAINER_NAME = 'myapp'
         IMAGE_NAME = 'node-backend'
         EC2_IP = 'ubuntu@34.201.229.103'
