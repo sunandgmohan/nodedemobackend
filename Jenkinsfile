@@ -37,6 +37,7 @@ pipeline {
 
                     docker run -d -p 3000:3000 \
                     --name ${CONTAINER_NAME} \
+                    --restart unless-stopped \
                     ${IMAGE_NAME}
                     '
                     """
