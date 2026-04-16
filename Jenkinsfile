@@ -36,10 +36,9 @@ pipeline {
                     docker build -t myapp .
 
                     docker run -d -p 3000:3000 \
-                      --name mybackend \
+                      --name mybackendnode \
                       --restart unless-stopped \
                       myapp
-                    EOF
                     '''
 
                 }
