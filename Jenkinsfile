@@ -33,12 +33,12 @@ pipeline {
                     docker rm -f ${CONTAINER_NAME} || true
                     docker rmi ${IMAGE_NAME} || true
 
-                    docker build -t ${IMAGE_NAME} .
+                    docker build -t MYAPP .
 
                     docker run -d -p 3000:3000 \
-                      --name ${CONTAINER_NAME} \
+                      --name MYBACKEND \
                       --restart unless-stopped \
-                      ${IMAGE_NAME}
+                      MYAPP
                     EOF
                     """
 
