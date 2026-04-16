@@ -20,7 +20,7 @@ pipeline {
             steps {
                 sshagent(['EC2_CRED']) {
                     sh """
-                    ssh -o StrictHostKeyChecking=no ${EC2_IP}'
+                    ssh -o StrictHostKeyChecking=no ${EC2_IP} 'EOF'
                     set -e
                     mkdir -p /home/ubuntu/backend
                     cd /home/ubuntu/backend
@@ -36,10 +36,10 @@ pipeline {
                     docker build -t ${IMAGE_NAME} .
 
                     docker run -d -p 3000:3000 \
-                    --name ${CONTAINER_NAME} \
-                    --restart unless-stopped \
-                    ${IMAGE_NAME}
-                    '
+                      --name ${CONTAINER_NAME} \
+                      --restart unless-stopped \
+                      ${IMAGE_NAME}
+                    EOF
                     """
 
                 }
