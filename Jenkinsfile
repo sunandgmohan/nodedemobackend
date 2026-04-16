@@ -19,7 +19,7 @@ pipeline {
         stage('deploy to ec2') {
             steps {
                 sshagent(['EC2_CRED']) {
-                    sh """
+                    sh '''
                     ssh -o StrictHostKeyChecking=no ${EC2_IP} << EOF
                     set -e
                     mkdir -p /home/ubuntu/backend
