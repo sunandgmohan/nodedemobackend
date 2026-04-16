@@ -5,7 +5,7 @@ pipeline {
 
         stage('git checkout') {
             steps {
-                git 'https://github.com/sunandgmohan/nodedemobackend.git'
+                git url: 'https://github.com/sunandgmohan/nodedemobackend.git', branch: 'main'
             }
         }
 
