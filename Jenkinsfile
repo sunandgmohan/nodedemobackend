@@ -40,11 +40,9 @@ pipeline {
                     ${IMAGE_NAME}
                     """
 
-        
+                }
             }
-        }
-
-        
+        }  
     }
 }
 
