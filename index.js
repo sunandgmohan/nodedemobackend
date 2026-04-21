@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 
 app.get("/", (req, res) => {
-  res.send("backend app deployed successfully");
+  res.send("app deployed successfully");
 });
 
 const PORT = 3000;
